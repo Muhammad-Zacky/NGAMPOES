@@ -1,6 +1,3 @@
-https://docs.google.com/document/d/1c-KAODdoBdc8rRNoqjAqoyxPXvNMviUGnOMLF67CJdU/mobilebasic
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
