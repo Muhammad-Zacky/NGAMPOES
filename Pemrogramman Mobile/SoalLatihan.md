@@ -1,56 +1,158 @@
 https://docs.google.com/document/d/1c-KAODdoBdc8rRNoqjAqoyxPXvNMviUGnOMLF67CJdU/mobilebasic
 
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#FFF8F9FF">
+    tools:context=".activity_page_relative_layout">
 
-    <!-- EditText for Reminder -->
-    <EditText
-        android:id="@+id/editTextReminder"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Reminder"
-        android:padding="10dp"
-        android:background="@android:color/transparent"
-        android:textColor="#000"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
-    <!-- Spinner for first dropdown -->
-    <Spinner
-        android:id="@+id/spinner1"
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="reminder"/>
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dates"
+            android:layout_below="@id/etName"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@id/times" />
+
+        <Spinner
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/times"
+            android:layout_below="@id/etName"
+            android:layout_alignParentRight="true"/>
+
+        <Button
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/times"
+            android:layout_alignParentRight="true"
+            android:text="DONE"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextReminder"
-        android:layout_marginTop="20dp"
-        android:entries="@array/items"
-        android:textSize="18sp" />
+        android:stretchColumns="1">
 
-    <!-- Spinner for second dropdown -->
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextReminder"
-        android:layout_toRightOf="@id/spinner1"
-        android:layout_marginStart="20dp"
-        android:entries="@array/items"
-        android:textSize="18sp" />
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E0FFFF">
 
-    <!-- Button for Done -->
-    <Button
-        android:id="@+id/buttonDone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:text="DONE"
-        android:backgroundTint="#6B52AE"
-        android:textColor="#FFF"
-        android:padding="10dp"
-        android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open ..."
+                android:padding="8dp" />
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ctrl + O"
+                android:gravity="right"
+                android:padding="8dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E0FFFF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save ..."
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ctrl + S"
+                android:gravity="right"
+                android:padding="8dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFF00">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:padding="8dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFF00">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Export"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ctrl + E"
+                android:gravity="right"
+                android:padding="8dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E6E6FA">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quit"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ctrl + Q"
+                android:gravity="right"
+                android:padding="8dp" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
